@@ -1,8 +1,6 @@
 $( () => {
 
    liDelete();
-    h2Clean();
-    pClean();
     drag();
 
     let $addBtn = $(".addNote");
@@ -19,26 +17,12 @@ $( () => {
             <textarea class="text" placeholder="Dodaj treść notatki"></textarea>
         </li>`);
         liDelete();
-        h2Clean();
-        pClean();
         drag();
     });
 
     function liDelete(){
         $('.delete').click(function() {
             $(this).parent($li).remove();
-        });
-    }
-
-    function h2Clean(){
-        $('h2').click(function() {
-            $(this).empty();
-        });
-    }
-
-    function pClean(){
-        $('p').click(function() {
-            $(this).empty();
         });
     }
 
@@ -59,6 +43,6 @@ $( () => {
    let body = $('body');
    $(window).on('scroll', function(){
        body.css('background-position', 'center ' + -($(this).scrollTop()*0.2) + 'px')
-   })
+   });
 
 });
