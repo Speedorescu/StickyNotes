@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
     <script src="libs/jquery-3.1.1.min.js"></script>
+    <script src="libs/jquery-ui.min.js"></script>
 
 </head>
 <body>
@@ -16,12 +17,11 @@
 <button class="addNote"><img src="images/iconmonstr-plus-4-48.png" alt="addNoteButton"></button>
 <button class="deleteAll"><img src="images/iconmonstr-trash-can-1-48.png" alt="deleteAllButton"></button>
 </div>
-
     <ul>
-        <li>
+        <li class="drag">
             <button class="delete"><img src="images/iconmonstr-x-mark-4-32.png" alt=""></button>
-            <h2 contenteditable="true">Kliknij, by dodać nagłówek</h2>
-            <p contenteditable="true">Kliknij, by dodać tekst</p>
+            <textarea class="header" placeholder="Dodaj nagłówek"></textarea>
+            <textarea class="text" placeholder="Dodaj treść notatki"></textarea>
         </li>
     </ul>
 

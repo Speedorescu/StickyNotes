@@ -5,9 +5,10 @@
 
 body{
     font-family: 'Indie Flower', cursive;
-    background: grey;
     background-image:url(../images/background-2847042_1920.jpg);
-    background-size:100%;
+    background-size:cover;
+    background-attachment: fixed;
+    background-position: center 0;
     margin: 40px;
 }
 
@@ -21,8 +22,8 @@ li{
     text-decoration:none;
     background:lightgoldenrodyellow;
     color: darkslategrey;
-    height:300px;
-    width:300px;
+    height:250px;
+    width:250px;
     padding:20px;
     overflow:hidden;
     list-style:none;
@@ -37,8 +38,16 @@ li:nth-child(even){
     background:#cfc;
 }
 
+li:nth-child(even) textarea{
+    background:#cfc;
+}
+
 li:nth-child(3n){
  transform: rotate(-2deg);
+    background:#ccf;
+}
+
+li:nth-child(3n) textarea{
     background:#ccf;
 }
 
@@ -67,8 +76,13 @@ li:hover, li:focus {
     background-color: transparent;
 }
 
-.addNote:hover{
+.addNote:hover,.addNote:focus{
     cursor: pointer;
+    outline: none;
+}
+
+.addNote:active, .deleteAll:active {
+    outline: none;
 }
 
 .deleteAll{
@@ -78,18 +92,47 @@ li:hover, li:focus {
     background-color: transparent;
 }
 
-.deleteAll:hover{
+.deleteAll:hover, .deleteAll:focus{
     cursor:pointer;
+    outline: none;
 }
 
 .delete {
     float: right;
     width: 34px;
     height: 34px;
-    background: white;
+    background-color: transparent;
     border-radius: 50px;
+    border: none;
 }
 
 .delete:hover, .delete:focus {
     cursor: pointer;
+    outline: none;
+}
+
+.header{
+    font-family: 'Indie Flower', cursive;
+    font-size: 15px;
+    width: 240px;
+    background:lightgoldenrodyellow;
+    border: none;
+    font-weight: bold;
+}
+
+.text{
+    font-family: 'Indie Flower', cursive;
+    font-size: 12px;
+    width: 240px;
+    height: 150px;
+    background:lightgoldenrodyellow;
+    border: none;
+}
+
+textarea{
+    resize: none;
+}
+
+textarea:focus{
+    outline: none;
 }

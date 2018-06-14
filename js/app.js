@@ -3,23 +3,25 @@ $( () => {
    liDelete();
     h2Clean();
     pClean();
+    drag();
 
     let $addBtn = $(".addNote");
     let $ul = $("ul");
     let $li = $("li");
     let $killEmAll = $(".deleteAll");
 
-   // console.log($killEmAll);
+   // console.log();
 
     $addBtn.on("click", ()=>{
-        $ul.append(`<li>     
-                <button class="delete"><img src="images/iconmonstr-x-mark-4-32.png" alt=""></button>
-                       <h2 contenteditable="true">Kliknij, by dodać nagłówek</h2>
-                <p contenteditable="true">Kliknij, by dodać tekst</p>
-                       </li>`);
+        $ul.append(`<li class="drag">
+            <button class="delete"><img src="images/iconmonstr-x-mark-4-32.png" alt=""></button>
+            <textarea class="header" placeholder="Dodaj nagłówek"></textarea>
+            <textarea class="text" placeholder="Dodaj treść notatki"></textarea>
+        </li>`);
         liDelete();
         h2Clean();
         pClean();
+        drag();
     });
 
     function liDelete(){
@@ -42,7 +44,21 @@ $( () => {
 
     $killEmAll.on("click", ()=> {
         $ul.children().remove();
+    });
 
-    })
+   function drag(){
+       $('.drag').draggable({
+           containment: 'window',
+           cursor: 'move',
+           delay: 200,
+           distance: 30,
+           opacity: 0.8
+       })
+   }
+
+   let body = $('body');
+   $(window).on('scroll', function(){
+       body.css('background-position', 'center ' + -($(this).scrollTop()*0.2) + 'px')
+   })
 
 });
